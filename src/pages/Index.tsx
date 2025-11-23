@@ -74,78 +74,87 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen">
-      <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b">
-        <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Icon name="Wrench" size={28} className="text-primary" />
-            <span className="text-xl font-bold">АвтоСервис</span>
+    <div className="min-h-screen bg-background text-foreground">
+      <header className="fixed top-0 w-full bg-background/80 backdrop-blur-md z-50 border-b border-border">
+        <nav className="container mx-auto px-4 py-5 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
+              <Icon name="Wrench" size={24} className="text-primary" />
+            </div>
+            <span className="text-2xl font-bold tracking-tight">АвтоСервис</span>
           </div>
-          <div className="hidden md:flex gap-8">
-            <a href="#services" className="hover:text-primary transition-colors">Услуги</a>
-            <a href="#advantages" className="hover:text-primary transition-colors">Преимущества</a>
-            <a href="#about" className="hover:text-primary transition-colors">О нас</a>
-            <a href="#contact" className="hover:text-primary transition-colors">Контакты</a>
+          <div className="hidden md:flex gap-10">
+            <a href="#services" className="text-sm uppercase tracking-wider hover:text-primary transition-colors">Услуги</a>
+            <a href="#advantages" className="text-sm uppercase tracking-wider hover:text-primary transition-colors">Преимущества</a>
+            <a href="#about" className="text-sm uppercase tracking-wider hover:text-primary transition-colors">О нас</a>
+            <a href="#contact" className="text-sm uppercase tracking-wider hover:text-primary transition-colors">Контакты</a>
           </div>
-          <Button className="hidden md:block">
+          <Button className="hidden md:flex bg-primary hover:bg-primary/90">
             <Icon name="Phone" size={18} className="mr-2" />
             Позвонить
           </Button>
         </nav>
       </header>
 
-      <section className="pt-32 pb-20 px-4">
-        <div className="container mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in">
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                Профессиональный ремонт вашего автомобиля
-              </h1>
-              <p className="text-lg text-muted-foreground mb-8">
-                Качественное обслуживание и ремонт автомобилей любой сложности. 
-                Современное оборудование, опытные мастера, гарантия на все работы.
-              </p>
-              <div className="flex gap-4">
-                <Button size="lg" className="text-lg px-8">
-                  Записаться на ремонт
-                </Button>
-                <Button size="lg" variant="outline" className="text-lg px-8">
-                  <Icon name="Calculator" size={20} className="mr-2" />
-                  Рассчитать стоимость
-                </Button>
-              </div>
+      <section className="relative pt-32 pb-32 px-4 min-h-screen flex items-center">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-background z-10"></div>
+          <img 
+            src="https://cdn.poehali.dev/projects/44e816d4-b802-4b97-a04b-dbc69f446ec8/files/8e553148-9d46-4579-81b8-56cdde3cbef7.jpg"
+            alt="Автосервис"
+            className="w-full h-full object-cover opacity-30"
+          />
+        </div>
+        <div className="container mx-auto relative z-20">
+          <div className="max-w-4xl">
+            <div className="inline-block mb-6 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full">
+              <span className="text-primary text-sm font-medium uppercase tracking-wider">Премиум автосервис</span>
             </div>
-            <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-              <img 
-                src="https://cdn.poehali.dev/projects/44e816d4-b802-4b97-a04b-dbc69f446ec8/files/e58e9b3a-9df9-4e41-8cd3-23a61d61b4d5.jpg"
-                alt="Автосервис"
-                className="w-full h-full object-cover"
-              />
+            <h1 className="text-6xl md:text-8xl font-bold mb-8 leading-none">
+              Профессиональный<br />
+              <span className="text-primary">ремонт</span> автомобилей
+            </h1>
+            <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl leading-relaxed">
+              Качественное обслуживание и ремонт автомобилей любой сложности. 
+              Современное оборудование, опытные мастера, гарантия на все работы.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button size="lg" className="text-lg px-10 py-7 bg-primary hover:bg-primary/90 group">
+                Записаться на ремонт
+                <Icon name="ArrowRight" size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              <Button size="lg" variant="outline" className="text-lg px-10 py-7 border-border hover:bg-muted">
+                <Icon name="Calculator" size={20} className="mr-2" />
+                Рассчитать стоимость
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="services" className="py-20 bg-muted/30">
+      <section id="services" className="py-32 border-t border-border">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Наши услуги</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Полный спектр услуг по ремонту и обслуживанию автомобилей
+          <div className="mb-20">
+            <div className="inline-block mb-4 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full">
+              <span className="text-primary text-sm font-medium uppercase tracking-wider">Наши услуги</span>
+            </div>
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">Полный спектр услуг</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl">
+              Профессиональный ремонт и обслуживание автомобилей любой марки
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service, index) => (
               <Card 
                 key={index} 
-                className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                className="bg-card border-border hover:border-primary/50 transition-all duration-300 group overflow-hidden"
               >
-                <CardContent className="p-6">
-                  <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                    <Icon name={service.icon} size={28} className="text-primary" />
+                <CardContent className="p-8">
+                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+                    <Icon name={service.icon} size={32} className="text-primary" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                  <p className="text-muted-foreground">{service.description}</p>
+                  <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">{service.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{service.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -153,63 +162,70 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="advantages" className="py-20">
+      <section id="advantages" className="py-32 border-t border-border bg-muted/20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Почему выбирают нас</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <div className="text-center mb-20">
+            <div className="inline-block mb-4 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full">
+              <span className="text-primary text-sm font-medium uppercase tracking-wider">Преимущества</span>
+            </div>
+            <h2 className="text-5xl md:text-6xl font-bold mb-6">Почему выбирают нас</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Мы гордимся нашим профессионализмом и индивидуальным подходом к каждому клиенту
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {advantages.map((advantage, index) => (
               <div 
                 key={index} 
-                className="text-center p-6 rounded-xl hover:bg-muted/30 transition-colors"
+                className="text-center p-8 rounded-2xl hover:bg-card/50 border border-transparent hover:border-border transition-all group"
               >
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon name={advantage.icon} size={32} className="text-primary" />
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition-colors">
+                  <Icon name={advantage.icon} size={36} className="text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{advantage.title}</h3>
-                <p className="text-muted-foreground">{advantage.description}</p>
+                <h3 className="text-2xl font-bold mb-4">{advantage.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{advantage.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="about" className="py-20 bg-muted/30">
+      <section id="about" className="py-32 border-t border-border">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="relative h-[500px] lg:h-[600px] rounded-3xl overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent z-10"></div>
               <img 
                 src="https://cdn.poehali.dev/projects/44e816d4-b802-4b97-a04b-dbc69f446ec8/files/0419ccab-116c-4225-a24e-7520daf95b5e.jpg"
                 alt="Работа мастера"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
             </div>
             <div>
-              <h2 className="text-4xl font-bold mb-6">О нашем сервисе</h2>
-              <p className="text-lg text-muted-foreground mb-6">
+              <div className="inline-block mb-4 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full">
+                <span className="text-primary text-sm font-medium uppercase tracking-wider">О нас</span>
+              </div>
+              <h2 className="text-5xl md:text-6xl font-bold mb-8">Наш подход к работе</h2>
+              <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
                 Мы работаем на рынке автомобильных услуг уже более 15 лет. За это время 
                 мы помогли тысячам автовладельцев вернуть их автомобили в идеальное состояние.
               </p>
-              <p className="text-lg text-muted-foreground mb-6">
+              <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
                 Наш подход основан на честности, профессионализме и внимании к деталям. 
                 Мы используем только качественные запчасти и современное диагностическое оборудование.
               </p>
-              <div className="grid grid-cols-3 gap-6 mt-8">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">15+</div>
-                  <div className="text-sm text-muted-foreground">Лет опыта</div>
+              <div className="grid grid-cols-3 gap-8">
+                <div className="border-l-2 border-primary pl-6">
+                  <div className="text-5xl font-bold text-primary mb-3">15+</div>
+                  <div className="text-muted-foreground uppercase text-sm tracking-wider">Лет опыта</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">5000+</div>
-                  <div className="text-sm text-muted-foreground">Клиентов</div>
+                <div className="border-l-2 border-primary pl-6">
+                  <div className="text-5xl font-bold text-primary mb-3">5000+</div>
+                  <div className="text-muted-foreground uppercase text-sm tracking-wider">Клиентов</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">98%</div>
-                  <div className="text-sm text-muted-foreground">Довольных</div>
+                <div className="border-l-2 border-primary pl-6">
+                  <div className="text-5xl font-bold text-primary mb-3">98%</div>
+                  <div className="text-muted-foreground uppercase text-sm tracking-wider">Довольных</div>
                 </div>
               </div>
             </div>
@@ -217,72 +233,85 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="contact" className="py-20">
+      <section id="contact" className="py-32 border-t border-border bg-muted/20">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold mb-4">Свяжитесь с нами</h2>
-              <p className="text-lg text-muted-foreground">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <div className="inline-block mb-4 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full">
+                <span className="text-primary text-sm font-medium uppercase tracking-wider">Контакты</span>
+              </div>
+              <h2 className="text-5xl md:text-6xl font-bold mb-6">Свяжитесь с нами</h2>
+              <p className="text-xl text-muted-foreground">
                 Оставьте заявку, и мы свяжемся с вами в ближайшее время
               </p>
             </div>
-            <Card>
-              <CardContent className="p-8">
-                <form onSubmit={handleSubmit} className="space-y-6">
+            <Card className="bg-card border-border">
+              <CardContent className="p-10">
+                <form onSubmit={handleSubmit} className="space-y-8">
                   <div>
-                    <label className="block text-sm font-medium mb-2">Ваше имя</label>
+                    <label className="block text-sm font-medium mb-3 uppercase tracking-wider">Ваше имя</label>
                     <Input 
                       placeholder="Иван Иванов"
                       value={formData.name}
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
+                      className="bg-background border-border text-lg py-6"
                       required
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-2">Телефон</label>
+                    <label className="block text-sm font-medium mb-3 uppercase tracking-wider">Телефон</label>
                     <Input 
                       type="tel"
                       placeholder="+7 (999) 123-45-67"
                       value={formData.phone}
                       onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                      className="bg-background border-border text-lg py-6"
                       required
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-2">Сообщение</label>
+                    <label className="block text-sm font-medium mb-3 uppercase tracking-wider">Сообщение</label>
                     <Textarea 
                       placeholder="Опишите вашу проблему или вопрос..."
-                      rows={4}
+                      rows={5}
                       value={formData.message}
                       onChange={(e) => setFormData({...formData, message: e.target.value})}
+                      className="bg-background border-border text-lg"
                       required
                     />
                   </div>
-                  <Button type="submit" size="lg" className="w-full">
+                  <Button type="submit" size="lg" className="w-full py-7 text-lg bg-primary hover:bg-primary/90 group">
                     <Icon name="Send" size={20} className="mr-2" />
                     Отправить заявку
+                    <Icon name="ArrowRight" size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </form>
-                <div className="mt-8 pt-8 border-t grid md:grid-cols-3 gap-6">
-                  <div className="flex items-start gap-3">
-                    <Icon name="MapPin" className="text-primary mt-1" size={20} />
+                <div className="mt-12 pt-12 border-t border-border grid md:grid-cols-3 gap-8">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Icon name="MapPin" className="text-primary" size={24} />
+                    </div>
                     <div>
-                      <div className="font-medium mb-1">Адрес</div>
-                      <div className="text-sm text-muted-foreground">г. Москва, ул. Примерная, д. 123</div>
+                      <div className="font-bold mb-2 uppercase text-sm tracking-wider">Адрес</div>
+                      <div className="text-muted-foreground">г. Москва, ул. Примерная, д. 123</div>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <Icon name="Phone" className="text-primary mt-1" size={20} />
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Icon name="Phone" className="text-primary" size={24} />
+                    </div>
                     <div>
-                      <div className="font-medium mb-1">Телефон</div>
-                      <div className="text-sm text-muted-foreground">+7 (999) 123-45-67</div>
+                      <div className="font-bold mb-2 uppercase text-sm tracking-wider">Телефон</div>
+                      <div className="text-muted-foreground">+7 (999) 123-45-67</div>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <Icon name="Clock" className="text-primary mt-1" size={20} />
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Icon name="Clock" className="text-primary" size={24} />
+                    </div>
                     <div>
-                      <div className="font-medium mb-1">Режим работы</div>
-                      <div className="text-sm text-muted-foreground">Пн-Пт: 9:00 - 20:00</div>
+                      <div className="font-bold mb-2 uppercase text-sm tracking-wider">Режим работы</div>
+                      <div className="text-muted-foreground">Пн-Пт: 9:00 - 20:00</div>
                     </div>
                   </div>
                 </div>
@@ -292,37 +321,39 @@ const Index = () => {
         </div>
       </section>
 
-      <footer className="bg-secondary text-secondary-foreground py-12">
+      <footer className="border-t border-border py-16">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-12 mb-12">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <Icon name="Wrench" size={24} />
-                <span className="text-lg font-bold">АвтоСервис</span>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
+                  <Icon name="Wrench" size={24} className="text-primary" />
+                </div>
+                <span className="text-2xl font-bold tracking-tight">АвтоСервис</span>
               </div>
-              <p className="text-sm opacity-80">
+              <p className="text-muted-foreground leading-relaxed">
                 Профессиональный ремонт и обслуживание автомобилей с 2009 года
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Навигация</h4>
-              <div className="space-y-2 text-sm opacity-80">
-                <div><a href="#services" className="hover:opacity-100 transition-opacity">Услуги</a></div>
-                <div><a href="#advantages" className="hover:opacity-100 transition-opacity">Преимущества</a></div>
-                <div><a href="#about" className="hover:opacity-100 transition-opacity">О нас</a></div>
-                <div><a href="#contact" className="hover:opacity-100 transition-opacity">Контакты</a></div>
+              <h4 className="font-bold mb-6 uppercase tracking-wider text-sm">Навигация</h4>
+              <div className="space-y-3 text-muted-foreground">
+                <div><a href="#services" className="hover:text-primary transition-colors">Услуги</a></div>
+                <div><a href="#advantages" className="hover:text-primary transition-colors">Преимущества</a></div>
+                <div><a href="#about" className="hover:text-primary transition-colors">О нас</a></div>
+                <div><a href="#contact" className="hover:text-primary transition-colors">Контакты</a></div>
               </div>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Контакты</h4>
-              <div className="space-y-2 text-sm opacity-80">
+              <h4 className="font-bold mb-6 uppercase tracking-wider text-sm">Контакты</h4>
+              <div className="space-y-3 text-muted-foreground">
                 <div>+7 (999) 123-45-67</div>
                 <div>info@autoservice.ru</div>
                 <div>г. Москва, ул. Примерная, д. 123</div>
               </div>
             </div>
           </div>
-          <div className="mt-8 pt-8 border-t border-white/10 text-center text-sm opacity-60">
+          <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
             © 2024 АвтоСервис. Все права защищены.
           </div>
         </div>
